@@ -7,7 +7,7 @@
 #define FALSE   0
 
 int N;
-int global = 10;
+long int global = 1000000000;
 int entering[100];
 int number[100];
 
@@ -37,12 +37,15 @@ void unlock(int i) {
 }
 
 void *fn(void *integer) {
+int x;
     int i = (int) integer;
     lock(i);
     printf("\n\n-----------Process %d---------",i);
     printf("\nProcess %d is Entering Critical Section\n",i);
-    global++;
-    printf("%d is the value of global \n",global);
+    for(x=0;x<global;x++){
+    
+    }
+    //printf("%ld is the value of global \n",global);
     printf("Process %d is leaving Critical Section\n",i);
     printf("----------------------------------\n\n");
     unlock(i);
